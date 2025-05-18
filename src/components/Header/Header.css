@@ -1,0 +1,10 @@
+/* src/components/Header/Header.css */
+@media (max-width: 768px) {
+  .mobile-menu {
+    @apply absolute top-full left-0 right-0 bg-blue-900 shadow-lg py-4 px-6;
+  }
+}
+
+.user-email {
+  @apply truncate max-w-[200px];
+}
