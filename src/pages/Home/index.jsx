@@ -10,40 +10,50 @@ function Home() {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl font-bold mb-4">Stand Against Ragging</h1>
-            <p className="text-xl mb-6">
-              VNRVJIET is committed to providing a safe and inclusive environment for all students.
-              Report incidents of ragging confidentially and help us maintain a respectful campus.
-            </p>
-            <Link 
-              to="/report" 
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center transition duration-300"
-            >
-              Report an Incident
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
-          </div>
-          <div className="md:w-1/2 flex justify-center">
-            <img 
-              src="https://placehold.co/600x400/EEE/31316A?text=Stop+Ragging" 
-              alt="Students standing united against ragging" 
-              className="rounded-lg shadow-xl" 
-            />
-          </div>
-        </div>
-      </section>
+      <section className="bg-gradient-to-r from-[#1e293b] to-[#0f172a] text-white py-16 md:py-20">
+  <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-12">
+    
+    {/* Text Content */}
+    <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+        Stand Against Ragging
+      </h1>
+      <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8">
+        VNRVJIET is committed to providing a safe and inclusive environment for all students.
+        Report incidents of ragging confidentially and help us maintain a respectful campus.
+      </p>
+      <div className="flex justify-center lg:justify-start">
+        <Link 
+          to="/report" 
+          className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center shadow-md hover:shadow-lg transition duration-300"
+        >
+          Report an Incident
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </Link>
+      </div>
+    </div>
+
+    {/* Image */}
+    <div className="w-full lg:w-1/2 flex justify-center">
+      <img 
+        src="https://www.damchudgir.edu.in/wp-content/uploads/2019/02/anti-ragging.jpg" 
+        alt="Students standing united against ragging" 
+        className="rounded-xl shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-lg"
+      />
+    </div>
+
+  </div>
+</section>
+
       
       {/* Info Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Understanding Ragging</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 text-black">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="text-blue-600 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,10 +95,10 @@ function Home() {
       
       {/* Steps Section */}
       <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 ">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">How to Report an Incident</h2>
           
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-black">
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold flex-shrink-0">
