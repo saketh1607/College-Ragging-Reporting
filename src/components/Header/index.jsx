@@ -30,6 +30,7 @@ function Header() {
               {isAdmin && (
                 <Link to="/admin" className="hover:text-white/80 transition">Admin Dashboard</Link>
               )}
+             
             </>
           )}
         </nav>
@@ -41,7 +42,7 @@ function Header() {
               {user.primaryEmailAddress?.emailAddress}
             </span>
           )}
-          <UserButton />
+          <UserButton afterSignOutUrl="/login" userProfileMode="none" />
           {/* Mobile Toggle Button */}
           <div className="md:hidden">
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
