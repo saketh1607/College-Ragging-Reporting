@@ -41,7 +41,7 @@ function Header() {
               {user.primaryEmailAddress?.emailAddress}
             </span>
           )}
-          <UserButton />
+          <UserButton afterSignOutUrl="/login" userProfileMode="none" />
           {/* Mobile Toggle Button */}
           <div className="md:hidden">
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
