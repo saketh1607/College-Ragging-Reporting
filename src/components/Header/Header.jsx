@@ -12,7 +12,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <Link to="/" className="text-2xl font-bold hover:text-blue-200 transition-colors">
           <img 
-            src="/college-logo.png" 
+            src="https://upload.wikimedia.org/wikipedia/en/e/e5/Official_logo_of_VNRVJIET.png" 
             alt="VNRVJIET Logo" 
             className="h-12 w-12 mr-2 inline-block"
           />

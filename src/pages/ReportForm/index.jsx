@@ -158,7 +158,7 @@ function ReportForm() {
                 type="text"
                 name="victimName"
                 value={user?.fullName || ''}
-                className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 cursor-not-allowed shadow-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 cursor-not-allowed shadow-sm text-gray-700"
                 required
                 disabled
               />
@@ -169,7 +169,7 @@ function ReportForm() {
                 type="email"
                 name="victimEmail"
                 value={user?.primaryEmailAddress?.emailAddress || ''}
-                className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 cursor-not-allowed shadow-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 cursor-not-allowed shadow-sm text-gray-700"
                 required
                 disabled
               />
