@@ -32,20 +32,44 @@ const AppRoutes = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  useEffect(() => {
-    if (isLoaded && isSignedIn && user) {
-      const email = user.primaryEmailAddress?.emailAddress?.toLowerCase();
+  // useEffect(() => {
+  //   if (isLoaded && isSignedIn && user) {
+  //     const email = user.primaryEmailAddress?.emailAddress?.toLowerCase();
       
-      // If user is saketh1607@gmail.com and not on admin page, redirect to admin
-      if (email === 'saketh1607@gmail.com' && location.pathname !== '/admin') {
-        navigate('/admin', { replace: true });
-      }
-      // If not admin but trying to access admin page, redirect to 404
-      else if (email !== 'saketh1607@gmail.com' && location.pathname === '/admin') {
-        navigate('/404', { replace: true });
-      }
+  //     // If user is saketh1607@gmail.com and not on admin page, redirect to admin
+  //     if (email === 'saketh1607@gmail.com' && location.pathname !== '/admin') {
+  //       navigate('/admin', { replace: true });
+  //     }
+  //     // If not admin but trying to access admin page, redirect to 404
+  //     else if (email !== 'saketh1607@gmail.com' && location.pathname === '/admin') {
+  //       navigate('/404', { replace: true });
+  //     }
+  //   }
+  // }, [isLoaded, isSignedIn, user, location.pathname, navigate]);
+  useEffect(() => {
+  if (isLoaded && isSignedIn && user) {
+    const email = user.primaryEmailAddress?.emailAddress?.toLowerCase();
+
+    const isAdmin = email === 'saketh1607@gmail.com';
+    const isCollegeUser = email.endsWith('@vnrvjiet.in');
+
+    // Allow only admin and vnrvjiet users; else redirect to 404
+    if (!isAdmin && !isCollegeUser) {
+      navigate('/404', { replace: true });
     }
-  }, [isLoaded, isSignedIn, user, location.pathname, navigate]);
+
+    // Redirect admin to /admin
+    if (isAdmin && location.pathname !== '/admin') {
+      navigate('/admin', { replace: true });
+    }
+
+    // Prevent non-admins from accessing /admin
+    if (!isAdmin && location.pathname === '/admin') {
+      navigate('/404', { replace: true });
+    }
+  }
+}, [isLoaded, isSignedIn, user, location.pathname, navigate]);
+
 
   if (!isLoaded) {
     return (
@@ -122,7 +146,7 @@ const AppRoutes = () => {
               onClick={() => navigate(isSignedIn ? '/' : '/login')}
               className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
             >
-              {isSignedIn ? 'Back to Home' : 'Back to Login'}
+              {isSignedIn||user?.primaryEmailAddress?.emailAddress?.toLowerCase() === 'saketh1607@gmail.com'||user?.primaryEmailAddress?.emailAddress?.toLowerCase().split('@')[1] === 'vnrvjiet.in' ? 'Back to Home' : 'Back to Login'}
             </button>
           </div>
         } 
